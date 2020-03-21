@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tugas</title>
+</head>
+<body>
+	<div id="app">
+		<h5>{{ nama }}</h5>
+		<h5>{{ hasil }}</h5>
+		<button v-on:click="manis()">submit</button>
+		<button v-on:click="pahit()">resubmit</button>
+	</div>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.min.js"></script>
+	<script type="text/javascript">
+		new Vue({
+			el: '#app',
+			data: {
+				nama: 'bagaimana semuanya bisa terjadi begitu saja',
+				hasil: '',
+			},
+			methods: {
+				manis() {
+					this.hasil = this.nama.length;
+				},
+				pahit() {
+					this.nama = this.nama.split('').reverse().join('');
+				}
+			}
+		})
+	</script>
+</body>
+</html>

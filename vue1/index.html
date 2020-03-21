@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>VUE</title>
+</head>
+<body>
+
+	<div id="app">
+		<h1>{{ biodata }}</h1>
+		<button v-on:click="ubah('bambang', 40)">ubah data</button>
+	</div>
+
+
+
+
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.min.js"></script>
+	<script type="text/javascript">
+		new Vue({
+			el: "#app",
+			data: {
+				nama: 'abid',
+				umur: 18,
+			},
+			computed: {
+				biodata() {
+					return 'nama saya ' + this.nama + ', umur saya ' + this.umur;
+				}
+			},
+			methods: {
+				ubah(arg_nama, arg_umur) {
+					this.nama = arg_nama;
+					this.umur = arg_umur;
+				}
+			}
+		})
+	</script>
+</body>
+</html>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>tugas vue 1</title>
+</head>
+<body>
+	<div id="app">
+		<h3>{{ text }}</h3>
+		<h4>{{ total }}</h4>
+		<button v-on:click="hitung()">tampilkan jumlah karakter</button>
+		<button v-on:click="terbalik()">reverse karakter</button>
+		<br>
+	</div>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.min.js"></script>
+	<script type="text/javascript">
+		new Vue({
+			el: '#app',
+			data: {
+				text: 'Di malam yang tak tampak bulan pada langitnya',
+				total: '',
+			},
+			methods: {
+				hitung() {
+					this.total = this.text.length;
+				},
+				terbalik() {
+					this.text = this.text.split('').reverse().join('');
+				}
+			}
+		})
+	</script>
+</body>
+</html>
