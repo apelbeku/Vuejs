@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Lampu</title>
+
+	<style type="text/css">
+		img {
+			width: 100px;
+			heigth: 150px;
+		}
+		.hilang {
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<div id="App">
+		<img :class="bol?'':'hilang'" src="https://img.lovepik.com/element_origin_pic/17/07/21/6f65a8326f30063d396365c7a611eda0.png_wh860.png">
+		<img :class="bol?'hilang':''" src="https://pixnio.com/free-images/2018/08/21/2018-08-21-20-56-58-675x900.png">
+		<button @click="berubah();">Tekan</button>
+	</div>
+
+
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.min.js"></script>
+	<script type="text/javascript">
+		new Vue({
+			el: '#App',
+			data: {
+				bol: true,
+			},
+			methods: {
+				berubah() {
+					this.bol = !this.bol;
+				}
+			}
+		})
+	</script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>palajaran2</title>
+	<style type="text/css">
+		.blue {
+			padding: 10px;
+			background: blue;
+		}
+		.red {
+			padding: 30px;
+			background: red;
+		}
+	</style>
+</head>
+<body>
+	<div id="app">
+		{{ nama }}
+		<br><br>
+
+		<input v-bind:value="1 + 1">
+
+		<br><br>
+			<span :class="berubah ? 'red' : 'blue'"></span>
+		<br><br>
+		<button @click="ubah()">Ubah nama</button>
+		<button @mouseover="ubahClass()">Ubah class</button>
+	</div>
+
+	<div>
+		<p v-if="berubah">kondisi terpenuhi</p>
+		<p v-else="">kondisi tidak terpenuhi</p>
+	</div>
+
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.min.js"></script>
+	<script type="text/javascript">
+		new Vue({
+			el: '#app',
+			data: {
+				nama: 'abid',
+				berubah: false,
+			},
+			methods: {
+				ubah() {
+					this.nama = 'khairy';
+				},
+				ubahClass() {
+					this.berubah = !this.berubah;
+					alert(this.berubah);
+				}
+			}
+		})
+	</script>
+</body>
+</html>
