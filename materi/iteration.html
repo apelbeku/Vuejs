@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<!-- 
+	<div  id="App">
+		<p v-for="(m, i) in 10">{{i }}. {{ m }}</p>
+	</div> -->
+
+	<div id="#App">		
+		<button @click="tambah()">tambah article</button>
+		<div v-for="(article, i) in articles" :key="article">
+			<h2>{{ i + 1  }}. {{ article.title }}</h2>
+			<p>{{ article.content }}</p>
+			<i>{{ article.author }}</i>
+		</div>
+	</div>	
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.min.js"></script>
+<script type="text/javascript">
+	new Vue ({
+		el: '#App',
+		data: {
+			mobil: ['Crv', 'BMW', 'Kijang'],
+			articles: [
+				{id: '1', title: 'hee', content: 'umu', author: 'khun'},
+				{id: '2', title: 'hii', content: 'imi', author: 'khin'},
+				{id: '3', title: 'haa', content: 'ama', author: 'khan'},
+			]
+		},
+		methods: {
+			tambah() {
+				var dataBaru = {
+					id: 'i',
+					title: 'nama baru',
+					content: 'content baru',
+					author: 'author baru',
+				};
+
+				this.article.push(dataBaru);
+			},
+		},
+	});
+</script>
+</body>
+</html>

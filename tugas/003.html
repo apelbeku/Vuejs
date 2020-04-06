@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Iteration</title>
+</head>
+<body>
+	<div id="App">
+		<button v-on:click="tambah()"> Push </button>
+		<p v-for="(values in start">{{ values.data }}</p>
+	</div>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.min.js"></script>
+	<script type="text/javascript">
+		new Vue ({
+			el: '#App',
+			data: {
+				start: [
+					{ data: '*' }
+				]
+			},
+			methods: {
+				tambah() {
+					var newData = '*';
+					this.start.forEach(function() {
+						newData += ' *';
+					});
+					this.start.push({ data: newData })
+				}
+			},
+		});
+	</script>
+</body>
+</html>
